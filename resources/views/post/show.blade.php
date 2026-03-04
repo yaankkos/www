@@ -1,7 +1,9 @@
-<x-layout>
-	<x-slot:title>
-		{{ $title }} - site.com
-	</x-slot>
-	
-	{{ $text }}
-</x-layout>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>my view</title>
+	</head>
+@foreach ($arr as $key => $elem)
+	{{ $key }} {{ $elem }}
+	</body>
+</html>
