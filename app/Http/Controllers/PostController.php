@@ -7,7 +7,7 @@ class PostController extends Controller
 		public function show()
 		{
 			return view('post.show', [
-				'' => [1, 2, 3]
+				'arr' => []
 	]);
 		}
 	}
