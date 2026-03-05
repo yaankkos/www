@@ -3,15 +3,21 @@
 	<head>
 		<title>my view</title>
 	</head>
-@foreach ($arr as $elem)
-	@if ($loop->odd)
-		нечетная итерация
-	@endif
-	
-	@if ($loop->even)
-		четная итерация
-	@endif
-		
+	<!-- индекс текущей итерации -->
+<!-- @foreach ($arr as $elem)
+	{{ $loop->index }}
+	{{ $elem }}
+@endforeach -->
+
+<!-- номер текущей операции -->
+<!-- @foreach ($arr as $elem)
+	{{ $loop->iteration }}
+	{{ $elem }}
+@endforeach -->
+
+<!-- скольк итераций осталось -->
+ @foreach ($arr as $elem)
+	{{ $loop->remaining }}
 	{{ $elem }}
 @endforeach
 
