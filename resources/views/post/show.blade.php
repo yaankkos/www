@@ -3,10 +3,8 @@
 	<head>
 		<title>my view</title>
 	</head>
-@forelse ($arr as $elem)
-	<p>{{ $elem }}</p>
-@empty
-	<p>в массиве нет элементов</p>
-@endforelse
+@foreach ($arr as $elem)
+	{{ $elem }}
+@endforeach
 	</body>
 </html>
