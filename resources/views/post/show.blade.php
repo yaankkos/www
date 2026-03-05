@@ -3,20 +3,21 @@
 	<head>
 		<title>my view</title>
 	</head>
-	<!-- Можно завершать работу цикла с помощью директивы break -->
+	<!-- следующей итерации цикла с помощью директивы continue -->
 <!-- @foreach ($arr as $elem)
-	{{ $elem }}
-	
 	@if ($elem == 3)
-		@break
+		@continue
 	@endif
+	
+	{{ $elem }}
 @endforeach -->
 
-<!-- Можно включить условие в строку объявления директивы: -->
+<!-- Можно включить условие в строку объявления директивы -->
+
 @foreach ($arr as $elem)
-	{{ $elem }}
+	@continue($elem == 3)
 	
-	@break($elem == 3)
+	{{ $elem }}
 @endforeach
 
 	</body>
