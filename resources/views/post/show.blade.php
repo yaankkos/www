@@ -4,15 +4,16 @@
 		<title>my view</title>
 	</head>
 @foreach ($arr as $elem)
-	@if ($loop->first)
-		первая итерация
+	@if ($loop->odd)
+		нечетная итерация
 	@endif
 	
-	@if ($loop->last)
-		последняя итерация
+	@if ($loop->even)
+		четная итерация
 	@endif
-	
+		
 	{{ $elem }}
 @endforeach
+
 	</body>
 </html>
