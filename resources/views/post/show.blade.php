@@ -3,8 +3,7 @@
 	<head>
 		<title>my view</title>
 	</head>
-	$value1 = 'Иван'
-	$value2 = 'Олегов'
-	$value3 = '20 лет'
+	
+	<p style="@cssStyle">dededsef</p>
 	</body>
 </html>
