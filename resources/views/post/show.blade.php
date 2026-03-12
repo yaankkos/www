@@ -3,10 +3,8 @@
 	<head>
 		<title>my view</title>
 	</head>
-
-
-<div class="$cssClass">
-	содержимое css класса
-</div>
+	$value1 = 'Иван'
+	$value2 = 'Олегов'
+	$value3 = '20 лет'
 	</body>
 </html>
