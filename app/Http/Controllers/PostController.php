@@ -6,9 +6,7 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			return view('post.show', [
-				'arr' => [1, 2, 3, 4, 5]
-	]);
+			// return view('post.show', ['name' => 'антон', 'age' => '28', 'salary' => '50000']); задание1
 		}
 	}
 

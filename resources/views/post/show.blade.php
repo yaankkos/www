@@ -3,8 +3,11 @@
 	<head>
 		<title>my view</title>
 	</head>
-@php
-	echo 123;
-@endphp
+	<!-- задание1 -->
+<!-- <p>{{ $name }}</p>
+<p>{{ $age }}</p>
+<p>{{ $salary }}</p> --> 
+
+
 	</body>
 </html>
