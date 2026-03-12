@@ -3,11 +3,10 @@
 	<head>
 		<title>my view</title>
 	</head>
-	<!-- задание1 -->
-<!-- <p>{{ $name }}</p>
-<p>{{ $age }}</p>
-<p>{{ $salary }}</p> --> 
 
 
+<div class="$cssClass">
+	содержимое css класса
+</div>
 	</body>
 </html>
