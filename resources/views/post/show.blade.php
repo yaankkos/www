@@ -3,6 +3,6 @@
 	<head>
 		<title>my view</title>
 	</head>
-	<a href="{{ $href }}">{{ $text }}</a>
+	{{ now()->format('d.m.Y') }}
 	</body>
 </html>
