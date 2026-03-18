@@ -5,15 +5,17 @@
 	<title>my view</title>
 </head>
 <body>
-	@php $i =1; @endphp
+@if(is_array($data))
+<p>Это массив</p>
 <ul>
-	@foreach($num as $number)
-	@if($number % 2 == 0)
-	<li>{{ $number }}</li>
-	@endif
+	@foreach($data as $item)
+	<li>{{ $item }}</li>
 	@endForeach
-	
-</ul>
+</ul>	
+@else
+<p>Это число:</p>
+	<p>{{ $data }}</p>
+@endif
 </body>
 
 </html>
