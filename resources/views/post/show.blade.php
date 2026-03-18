@@ -5,14 +5,9 @@
 	<title>my view</title>
 </head>
 <body>
-	<ul>
-@foreach($num as $number)
-@if($number == 0)
-@continue
-@endif
-<p>{{ $number }}</p>
-@endforeach
-</ul>
+@for($i = 1; $i <= 10; $i++)
+<p>Абзац номер {{ $i }}</p>
+@endfor
 </body>
 
 </html>
