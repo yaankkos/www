@@ -5,10 +5,11 @@
 	<title>my view</title>
 </head>
 <body>
-@if(count($numbers)>0)
-<p>Сумма элементов:{{ array_sum($numbers) }}</p>
-@else<p>Массив пустой.</p>
-@endif
+<ul>
+	@foreach($numbers as $number)
+	<li>{{ $number }}</li>
+	@endForeach
+</ul>
 </body>
 
 </html>
