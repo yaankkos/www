@@ -3,6 +3,8 @@
 	<head>
 		<title>my view</title>
 	</head>
-	{{ now()->format('d.m.Y') }}
+	<p>{{ $name }}</p>
+	<p>{{ $age }}</p>
+	<p>{{ $salary }}</p>
 	</body>
 </html>
