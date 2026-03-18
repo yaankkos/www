@@ -5,11 +5,15 @@
 	<title>my view</title>
 </head>
 <body>
-<table border="1">
-	@foreach($data as $cell)
-	<td>{{ $cell }}</td>
+<ul>
+	@foreach($employees as $employee)
+	<li>
+		{{ $employee['name'] }}
+		{{ $employee['surname'] }}
+		{{ $employee['salary'] }}
+	</li>
 	@endforeach
-</table>
+</ul>
 </body>
 
 </html>
