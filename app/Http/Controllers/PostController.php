@@ -6,7 +6,7 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			return view('post.show', ['users' => ['Иван', 'Мария', 'Петр']]);
+			return view('post.show', ['str' => ['яблоко', 'банан', 'груша', 'слива']]);
 	}
 	}
 
