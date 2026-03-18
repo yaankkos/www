@@ -7,7 +7,7 @@
 <body>
 <ul>
 	@foreach($numbers as $number)
-	<li>{{ $number * $number }}</li>
+	<li>{{ sqrt($number)  }}</li>
 	@endForeach
 </ul>
 </body>
