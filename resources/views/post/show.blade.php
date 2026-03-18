@@ -5,10 +5,10 @@
 	<title>my view</title>
 </head>
 <body>
-@unless ($age>18)
-	<p>Вам еще нет 18 лет</p>
-@endunless
-
+@if(count($numbers)>0)
+<p>Сумма элементов:{{ array_sum($numbers) }}</p>
+@else<p>Массив пустой.</p>
+@endif
 </body>
 
 </html>
