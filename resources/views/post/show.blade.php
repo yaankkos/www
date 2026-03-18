@@ -5,10 +5,13 @@
 	<title>my view</title>
 </head>
 <body>
+	@php $i =1; @endphp
 <ul>
-	@foreach($numbers as $key => $value)
-	<li>{{ $key  }} - {{ $value }}</li>
+	@foreach($fruits as $key => $value)
+	<li>{{ $i }} - {{ $value }}</li>
+	@php $i++; @endphp
 	@endForeach
+	
 </ul>
 </body>
 
