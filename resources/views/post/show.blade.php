@@ -7,7 +7,7 @@
 <body>
 <ul>
 	@foreach($numbers as $number)
-	<li>{{ $number }}</li>
+	<li>{{ $number * $number }}</li>
 	@endForeach
 </ul>
 </body>
