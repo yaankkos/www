@@ -3,7 +3,6 @@
 	<head>
 		<title>my view</title>
 	</head>
-	
-	<p style="@cssStyle">dededsef</p>
+	<a href="{{ $href }}">{{ $text }}</a>
 	</body>
 </html>
