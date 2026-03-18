@@ -6,8 +6,8 @@
 </head>
 <body>
 <ul>
-	@foreach($numbers as $number)
-	<li>{{ sqrt($number)  }}</li>
+	@foreach($numbers as $key => $value)
+	<li>{{ $key  }} - {{ $value }}</li>
 	@endForeach
 </ul>
 </body>
