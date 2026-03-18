@@ -6,7 +6,7 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			return view('post.show', ['str' => '<b>text</b>']);
+			return view('post.show', []);
 	}
 	}
 
