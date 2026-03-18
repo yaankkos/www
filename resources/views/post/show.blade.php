@@ -5,17 +5,12 @@
 	<title>my view</title>
 </head>
 <body>
-<ul>
-	@foreach($str as $string)
-	@if($loop ->first)
-	<li class="first">{{ $loop -> iteration }} - {{ $string }}</li>
-	@elseif($loop -> iteration)
-	<li class="last">{{ $loop -> iteration }} - {{ $string }}</li>
-	@else
-	<li>{{ $loop -> iteration }} - {{ $string }}</li>
-	@endif
-	@endforeach
-</ul>
+@foreach($num as $index => $number)
+@if($loop ->iteration >count($numbers) - 3)
+<i>{{ $number }}</i><br>
+<b>{{ $number }}</b>
+@endif
+@endforeach
 </body>
 
 </html>
