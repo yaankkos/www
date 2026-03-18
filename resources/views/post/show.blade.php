@@ -5,12 +5,14 @@
 	<title>my view</title>
 </head>
 <body>
+	<ul>
 @foreach($num as $number)
 @if($number == 0)
-@break
+@continue
 @endif
 <p>{{ $number }}</p>
 @endforeach
+</ul>
 </body>
 
 </html>
