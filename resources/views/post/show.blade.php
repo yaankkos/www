@@ -5,7 +5,7 @@
 	<title>my view</title>
 </head>
 <body>
-<p>Количество элементов в массиве: {{ count($animals) }}</p>
+<p>{{ $city ?? 'Москва'}}</p>
 </body>
 
 </html>
