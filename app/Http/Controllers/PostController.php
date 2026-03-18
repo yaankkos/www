@@ -6,8 +6,8 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			return view('post.show', ['location' => ['country' => '', 'city' => 'казань']]);
-		}
+			return view('post.show', ['year' => '2026', 'month' => '', 'day' => '18']);
+	}
 	}
 
 ?>
