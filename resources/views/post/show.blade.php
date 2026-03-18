@@ -5,11 +5,15 @@
 	<title>my view</title>
 </head>
 <body>
-	@php $i =1; @endphp
 <ul>
 	@foreach($str as $string)
-	<li>{{ $i}} - {{ $string }}</li>
-	@php $i++; @endphp
+	@if($loop ->first)
+	<li class="first">{{ $loop -> iteration }} - {{ $string }}</li>
+	@elseif($loop -> iteration)
+	<li class="last">{{ $loop -> iteration }} - {{ $string }}</li>
+	@else
+	<li>{{ $loop -> iteration }} - {{ $string }}</li>
+	@endif
 	@endforeach
 </ul>
 </body>
