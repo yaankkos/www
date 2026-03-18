@@ -6,7 +6,7 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			return view('post.show', ['num' => [10, 20, 30, 40, 50]]);
+			return view('post.show', ['num' => [3, 5, 6, 0, 2, 9]]);
 	}
 	}
 
