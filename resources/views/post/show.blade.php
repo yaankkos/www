@@ -5,7 +5,8 @@
 	<title>my view</title>
 </head>
 <body>
-<p>{{ $city ?? 'Москва'}}</p>
+<p>{{ $location['country'] ?? 'Россия'}}</p>
+<p>{{ $location['city'] ?? 'Москва'}}</p>
 </body>
 
 </html>
