@@ -5,22 +5,13 @@
 	<title>my view</title>
 </head>
 <body>
-	<table border="1">
-		<tr>
-			<th>Имя</th>
-		<th>Фамилия</th>
-		<th>Зарплата</th>
-		</tr>
-<ul>
-	@foreach($employees as $employee)
-	<li>
-		{{ $employee['name'] }}
-		{{ $employee['surname'] }}
-		{{ $employee['salary'] }}
-	</li>
-	@endforeach
-</ul>
-</table>
+@if(count($users)>0)
+@foreach($users as $user)
+<p>{{ $user }}</p>
+@endforeach
+@else
+<p>Массив пустой, пользователей нет.</p>
+@endif
 </body>
 
 </html>
