@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>my view</title>
-	</head>
-	<p>{{ $name }}</p>
-	<p>{{ $age }}</p>
-	<p>{{ $salary }}</p>
-	</body>
+
+<head>
+	<title>my view</title>
+</head>
+<body>
+<p>Количество элементов в массиве: {{ count($animals) }}</p>
+</body>
+
 </html>
