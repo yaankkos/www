@@ -6,9 +6,11 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
 
-$collection = collect(['John Doe', 'Jane Doe']);
+$collection = collect([1, 2, 3, 4, 5]);
 
-$collection->dd();
+$diff = $collection->diff([2, 4, 6, 8]);
 
-dd($collection);
+$diff->all();
+
+dd($diff);
 ?>
