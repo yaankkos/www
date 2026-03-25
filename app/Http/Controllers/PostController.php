@@ -5,14 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-]);
+$collectionA = collect([1, 2, 3]);
 
-$collapsed = $collection->collapse();
+$collectionB = $collectionA->collect();
 
-$collapsed->all();
-dd($collapsed);
+$collectionB->all();
+dd($collectionB);
 ?>
