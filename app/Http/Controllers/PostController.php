@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect(str_split('AABBCCCD'));
+$collection = collect([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]);
 
-$chunks = $collection->chunkWhile(function ($value, $key, $chunk) {
-    return $value === $chunk->last();
-});
-$chunks->all();
-dd($chunks);
+$collapsed = $collection->collapse();
+
+$collapsed->all();
+dd($collapsed);
 ?>
