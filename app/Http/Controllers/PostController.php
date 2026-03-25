@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect(['John Doe']);
+$collection = collect([1, 2, 3, 4, 5]);
 
-$concatenated = $collection->concat(['Jane Doe'])->concat(['name' => 'Johnny Doe']);
+$collection->contains(function ($value, $key) {
+    return $value > 5;
+});
 
-$concatenated->all();
-dd($concatenated);
+dd($collection);
 ?>
