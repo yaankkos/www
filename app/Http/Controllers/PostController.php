@@ -6,11 +6,9 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
 
-$collection = collect([1, 2]);
+$collection = collect(['John Doe', 'Jane Doe']);
 
-$matrix = $collection->crossJoin(['a', 'b'], ['I', 'II']);
+$collection->dd();
 
-$matrix->all();
-
-dd($matrix);
+dd($collection);
 ?>
