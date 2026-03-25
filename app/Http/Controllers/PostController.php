@@ -1,13 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-	
-class PostController extends Controller
-	{
-		public function show()
-		{
-			return view('post.show', ['num' => [3, 5, 6, 0, 2, 9]]);
-	}
-	}
 
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Lang;
+
+Collection::macro('toLocale', function ($locale) {
+    return $this->map(function ($value) use ($locale) {
+        return Lang::get($value, [], $locale);
+    });
+});
+
+$collection = collect(['first', 'second']);
+
+$translated = $collection->toLocale('es');
+dd($translated);
+	
 ?>

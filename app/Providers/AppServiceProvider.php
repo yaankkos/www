@@ -1,8 +1,12 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\AppServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,5 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+       
+
     }
 }
