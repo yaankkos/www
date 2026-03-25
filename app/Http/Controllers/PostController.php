@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collectionA = collect([1, 2, 3]);
+$collection = collect(['name', 'age']);
 
-$collectionB = $collectionA->collect();
+$combined = $collection->combine(['George', 29]);
 
-$collectionB->all();
-dd($collectionB);
+$combined->all();
+dd($combined);
 ?>
