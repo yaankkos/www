@@ -5,12 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect([1, 2, 3, 4, 5]);
+class Currency
+{
+    /**
+     * Создать новый экземпляр валюты.
+     *
+     * @param  string  $code
+     * @return void
+     */
+    function __construct(string $code)
+    {
+        $this->code = $code;
+    }
+}
 
-$multiplied = $collection->map(function ($item, $key) {
-    return $item * 2;
-});
+$collection = collect(['USD', 'EUR', 'GBP']);
 
-$multiplied->all();
-dd($multiplied);
+$currencies = $collection->mapInto(Currency::class);
+
+$currencies->all();
+dd($currencies);
 ?>
