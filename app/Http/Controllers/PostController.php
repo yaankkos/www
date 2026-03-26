@@ -5,23 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect([
-    'Apple' => [
-        [
-            'name' => 'iPhone 6S',
-            'brand' => 'Apple'
-        ],
-    ],
-    'Samsung' => [
-        [
-            'name' => 'Galaxy S7',
-            'brand' => 'Samsung'
-        ],
-    ],
-]);
+$collection = collect(['name' => 'taylor', 'framework' => 'laravel']);
 
-$products = $collection->flatten(1);
+$flipped = $collection->flip();
 
-$products->values()->all();
-dd($products);
+$flipped->all();
+dd($flipped);
 ?>
