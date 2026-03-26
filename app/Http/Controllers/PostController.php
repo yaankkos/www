@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect(['account_id' => 1, 'product' => 'Desk', 'amount' => 5]);
+$collection = collect([
+    ['account_id' => 1, 'product' => 'Desk'],
+    ['account_id' => 2, 'product' => 'Chair'],
+]);
 
-$collection->hasAny(['product', 'price']);
-$collection->hasAny(['name', 'price']);
+$collection->implode('product', ', ');
 dd($collection);
 ?>
