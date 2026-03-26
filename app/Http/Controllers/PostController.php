@@ -5,14 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect(['product_id' => 1, 'price' => 100]);
-
-$merged = $collection->mergeRecursive([
-    'product_id' => 2,
-    'price' => 200,
-    'discount' => false
-]);
-
-$merged->all();
-dd($merged);
+$min = collect([['foo' => 10], ['foo' => 20]])->min('foo');
+$min = collect([1, 2, 3, 4, 5])->min();
+dd($min);
 ?>
