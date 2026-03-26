@@ -5,13 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect([
-    ['product_id' => 'prod-100', 'name' => 'Desk'],
-    ['product_id' => 'prod-200', 'name' => 'Chair'],
-]);
+$lazyCollection = collect([1, 2, 3, 4])->lazy();
 
-$keyed = $collection->keyBy('product_id');
+get_class($lazyCollection);
 
-$keyed->all();
-dd($keyed);
+
+$lazyCollection->all();
+dd($lazyCollection);
 ?>
