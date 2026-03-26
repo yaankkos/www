@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$median = collect([
-    ['foo' => 10],
-    ['foo' => 10],
-    ['foo' => 20],
-    ['foo' => 40]
-])->median('foo');
-$median = collect([1, 1, 2, 4])->median();
-dd($median);
+$collection = collect(['product_id' => 1, 'price' => 100]);
+
+$merged = $collection->merge(['price' => 200, 'discount' => false]);
+
+$merged->all();
+dd($merged);
 ?>
