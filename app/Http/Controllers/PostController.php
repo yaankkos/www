@@ -5,8 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect(['a', 'b', 'c', 'd', 'e', 'f']);
+$collection = collect([
+    'product_id' => 1,
+    'name' => 'Desk',
+    'price' => 100,
+    'discount' => false
+]);
 
-$collection->nth(4);
-dd($collection);
+$filtered = $collection->only(['product_id', 'name']);
+
+$filtered->all();
+dd($filtered);
 ?>
