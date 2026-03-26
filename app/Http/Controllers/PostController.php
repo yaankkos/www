@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Lang;
 
 $collection = collect(['name' => 'taylor', 'framework' => 'laravel']);
 
-$flipped = $collection->flip();
+$collection->forget('name');
 
-$flipped->all();
-dd($flipped);
+$collection->all();
+dd($collection);
 ?>
