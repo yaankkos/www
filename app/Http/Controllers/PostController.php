@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
+$collection = collect([
+    'color' => 'orange',
+    'type' => 'fruit',
+    'remain' => 6,
+]);
 
-$collection = collect([1, 2, 3, 4, 5]);
-
-$diff = $collection->diff([2, 4, 6, 8]);
+$diff = $collection->diffAssoc([
+    'color' => 'yellow',
+    'type' => 'fruit',
+    'remain' => 3,
+    'used' => 6,
+]);
 
 $diff->all();
-
 dd($diff);
 ?>
