@@ -7,33 +7,22 @@ use Illuminate\Support\Facades\Lang;
 
 $collection = collect([
     [
-        'name' => 'John Doe',
+        'name' => 'John',
         'department' => 'Sales',
+        'email' => 'john@example.com',
     ],
     [
-        'name' => 'Jane Doe',
-        'department' => 'Sales',
-    ],
-    [
-        'name' => 'Johnny Doe',
+        'name' => 'Jane',
         'department' => 'Marketing',
+        'email' => 'jane@example.com',
     ]
 ]);
 
-$grouped = $collection->mapToGroups(function ($item, $key) {
-    return [$item['department'] => $item['name']];
+$keyed = $collection->mapWithKeys(function ($item, $key) {
+    return [$item['email'] => $item['name']];
 });
 
-$grouped->all();
+$keyed->all();
 
-/*
-    [
-        'Sales' => ['John Doe', 'Jane Doe'],
-        'Marketing' => ['Johnny Doe'],
-    ]
-*/
-
-$grouped->get('Sales')->all();
-
-dd($grouped);
+dd($keyed);
 ?>
