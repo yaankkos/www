@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect(['name' => 'taylor', 'framework' => 'laravel']);
+$collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
-$collection->forget('name');
+$chunk = $collection->forPage(2, 3);
 
-$collection->all();
-dd($collection);
+$chunk->all();
+dd($chunk);
 ?>
