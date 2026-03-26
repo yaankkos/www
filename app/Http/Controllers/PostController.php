@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect([
-    ['account_id' => 'account-x10', 'product' => 'Chair'],
-    ['account_id' => 'account-x10', 'product' => 'Bookcase'],
-    ['account_id' => 'account-x11', 'product' => 'Desk'],
-]);
+$collection = collect(['account_id' => 1, 'product' => 'Desk', 'amount' => 5]);
 
-$grouped = $collection->groupBy('account_id');
+$collection->has('product');
 
-$grouped->all();
-dd($grouped);
+// true
+
+$collection->has(['product', 'amount']);
+
+// true
+
+$collection->has(['amount', 'price']);
+dd($collection);
 ?>
