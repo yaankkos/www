@@ -5,24 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-class Currency
-{
-    /**
-     * Создать новый экземпляр валюты.
-     *
-     * @param  string  $code
-     * @return void
-     */
-    function __construct(string $code)
-    {
-        $this->code = $code;
-    }
-}
+$collection = collect([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
-$collection = collect(['USD', 'EUR', 'GBP']);
+$chunks = $collection->chunk(2);
 
-$currencies = $collection->mapInto(Currency::class);
+$sequence = $chunks->mapSpread(function ($even, $odd) {
+    return $even + $odd;
+});
 
-$currencies->all();
-dd($currencies);
+$sequence->all();
+dd($sequence);
 ?>
