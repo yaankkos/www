@@ -6,14 +6,22 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
 $collection = collect([
-    'name' => 'taylor',
-    'languages' => [
-        'php', 'javascript'
-    ]
+    'Apple' => [
+        [
+            'name' => 'iPhone 6S',
+            'brand' => 'Apple'
+        ],
+    ],
+    'Samsung' => [
+        [
+            'name' => 'Galaxy S7',
+            'brand' => 'Samsung'
+        ],
+    ],
 ]);
 
-$flattened = $collection->flatten();
+$products = $collection->flatten(1);
 
-$flattened->all();
-dd($flattened);
+$products->values()->all();
+dd($products);
 ?>
