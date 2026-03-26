@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect([]);
+$collection = collect(['product_id' => 1, 'price' => 100, 'discount' => false]);
 
-$collection->every(function ($value, $key) {
-    return $value > 2;
-});
+$filtered = $collection->except(['price', 'discount']);
 
-dd($collection);
+$filtered->all();
+dd($filtered);
 ?>
