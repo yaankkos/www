@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect([1, 2, 3, 4]);
+$collection = collect([
+    ['name' => 'Regena', 'age' => null],
+    ['name' => 'Linda', 'age' => 14],
+    ['name' => 'Diego', 'age' => 23],
+    ['name' => 'Linda', 'age' => 84],
+]);
 
-$filtered = $collection->filter(function ($value, $key) {
-    return $value > 2;
-});
-
-$filtered->all();
-dd($filtered);
+$collection->firstWhere('name', 'Linda');
+dd($collection);
 ?>
