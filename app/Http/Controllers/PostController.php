@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
 
-$collection = collect(['Desk', 'Sofa', 'Chair']);
+$collection = collect([
+    ['product_id' => 'prod-100', 'name' => 'Desk'],
+    ['product_id' => 'prod-200', 'name' => 'Chair'],
+]);
 
-$intersect = $collection->intersect(['Desk', 'Chair', 'Bookcase']);
+$keyed = $collection->keyBy('product_id');
 
-$intersect->all();
-dd($intersect);
+$keyed->all();
+dd($keyed);
 ?>
