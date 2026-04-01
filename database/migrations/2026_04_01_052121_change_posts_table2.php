@@ -6,14 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-   public function up(): void
+    public function up(): void
 {
     Schema::table('posts', function (Blueprint $table) {
         $table->string('title');
         $table->text('desc');
     });
 }
-
 public function down(): void
 {
     Schema::table('posts', function (Blueprint $table) {
