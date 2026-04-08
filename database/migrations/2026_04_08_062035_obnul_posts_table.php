@@ -9,16 +9,17 @@ return new class extends Migration
     
     public function up(): void
     {
-    //     Schema::table('posts', function (Blueprint $table) {
-	// 	$table->renameColumn('name', 'title');
-	// });
+       Schema::table('posts', function (Blueprint $table) {
+		$table->string('desc')->nullable()->change();
+	});
+
     }
 
-   
+    
     public function down(): void
     {
-    //           Schema::table('posts', function (Blueprint $table) {
-	// 	$table->renameColumn('title', 'name');
-	// });
+         Schema::table('posts', function (Blueprint $table) {
+		$table->string('desc')->notnullable()->change();
+	});
     }
 };
