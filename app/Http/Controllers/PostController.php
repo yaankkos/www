@@ -11,10 +11,10 @@ class PostController extends Controller
     public function show()
     {
         
-        DB::table('posts')->where('id', 1)->update([
-            'title' => 'page',
-            'slug' => 'page-1'  
-        ]);
+        DB::table('posts')
+		->where('id', 1)
+		->increment('likes', 5);
+
 
 
 
