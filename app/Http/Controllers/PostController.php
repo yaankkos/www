@@ -10,16 +10,12 @@ class PostController extends Controller
 {
     public function show()
     {
-        DB::table('posts')->insert([
-		[
-			'title' => 'page1',
-			'slug'  => 'slug1',
-		],
-		[
-			'title' => 'page2',
-			'slug'  => 'slug2',
-		]
-	]);
+        
+        DB::table('posts')->where('id', 1)->update([
+            'title' => 'page',
+            'slug' => 'page-1'  
+        ]);
+
 
 
     }
