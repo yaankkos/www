@@ -11,9 +11,11 @@ class PostController extends Controller
     public function show()
     {
         $posts = DB::table('posts')
-            ->orderBy('likes', 'desc')
+            ->oldest()
             ->get();
 
         dump($posts);
+
+
     }
 }
