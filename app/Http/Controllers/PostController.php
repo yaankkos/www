@@ -10,12 +10,10 @@ class PostController extends Controller
 {
     public function show()
     {
-        $titles = DB::table('posts')->pluck('title');
+        $posts = DB::table('posts')
+            ->whereBetween('likes', [1, 100])
+            ->get();
 
-        foreach ($titles as $title) {
-            echo $title;
-        }
-
-
+        dump($posts);
     }
 }
