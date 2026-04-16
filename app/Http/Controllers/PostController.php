@@ -10,9 +10,9 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-			DB::enableQueryLog();
-			DB::table('posts')->where('id', '>', 5)->get();
-			dump(DB::getQueryLog());
+			$query = DB::table('posts')->where('id', '>', 5)->toSql();
+			dump($query);
 		}
 	}
+
 
