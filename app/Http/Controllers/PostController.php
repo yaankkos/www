@@ -11,8 +11,8 @@ class PostController extends Controller
 		public function show()
 		{
             $posts = DB::table('posts')
-		->where('likes', '>', 10)
-		->where('likes', '<', 20)
+		->where('id', '=', 10)
+		->orWhere('likes', '>', 10)
 		->get();
 		}
 	}
