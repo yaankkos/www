@@ -10,11 +10,13 @@ class PostController extends Controller
 {
     public function show()
     {
-        $posts = DB::table('posts')
-            ->whereNotIn('id', [1, 2, 3])
-            ->get();
+       $posts = DB::table('posts')
+		->whereNotNull('updated_at')
+		->get();
+	
+	dump($posts);
 
-        dump($posts);
+
 
 
     }
