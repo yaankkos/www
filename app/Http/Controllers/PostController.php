@@ -11,9 +11,11 @@ class PostController extends Controller
     public function show()
     {
         $posts = DB::table('posts')
-            ->whereBetween('likes', [1, 100])
+            ->whereNotIn('id', [1, 2, 3])
             ->get();
 
         dump($posts);
+
+
     }
 }
