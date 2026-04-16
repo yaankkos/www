@@ -10,6 +10,6 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-            $posts = DB::table('posts')->select('title', 'text as post_text')->get();
+            $posts = DB::table('posts')->where('likes', '!=', 100)->get();
 		}
 	}
