@@ -10,13 +10,10 @@ class PostController extends Controller
 {
     public function show()
     {
-        $post = DB::table('posts')
-            ->whereIdOrSlug(1, 'my-page')
-            ->first();
+        $posts = DB::table('posts')
+            ->orderBy('likes', 'desc')
+            ->get();
 
-        dump($post);
-
-
-
+        dump($posts);
     }
 }
