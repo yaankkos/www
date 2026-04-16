@@ -11,10 +11,11 @@ class PostController extends Controller
     public function show()
     {
         $posts = DB::table('posts')
-            ->oldest()
-            ->get();
+		->oldest('date')
+		->get();
+	
+	dump($posts);
 
-        dump($posts);
 
 
     }
