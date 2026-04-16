@@ -11,9 +11,9 @@ class PostController extends Controller
     public function show()
     {
         
-        DB::table('posts')
-		->where('id', 1)
-		->increment('likes', 5);
+       DB::table('posts')->delete();
+
+
 
 
 
