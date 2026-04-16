@@ -10,14 +10,11 @@ class PostController extends Controller
 {
     public function show()
     {
-       $posts = DB::table('posts')
-		->whereNotNull('updated_at')
-		->get();
-	
-	dump($posts);
+        $post = DB::table('posts')
+            ->whereSlug('my-page')
+            ->get();
 
-
-
+        dump($post);
 
     }
 }
