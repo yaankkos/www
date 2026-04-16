@@ -11,10 +11,12 @@ class PostController extends Controller
     public function show()
     {
         $posts = DB::table('posts')
-            ->inRandomOrder()
+            ->take(5)
             ->get();
 
         dump($posts);
+
+
 
 
 
