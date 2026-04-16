@@ -10,14 +10,7 @@ class PostController extends Controller
 	{
 		public function show()
 		{
-          $posts = DB::table('posts')
-		->where('id', '=', 3)
-		->orWhere(function($query) {
-			$query
-				->where('likes', '>', 10)
-				->where('likes', '<', 50);
-		})
-	->get();
+         $post = DB::table('posts')->where('id', 1)->first();
 
 		}
 	}
