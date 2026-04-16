@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\DB;
 
-$collection = collect([
-    ['product_id' => 'prod-100', 'name' => 'Desk'],
-    ['product_id' => 'prod-200', 'name' => 'Chair'],
-]);
+class PostController extends Controller
+	{
+		public function show()
+		{
+			DB::enableQueryLog();
+			DB::table('posts')->where('id', '>', 5)->get();
+			dump(DB::getQueryLog());
+		}
+	}
 
-$plucked = $collection->pluck('name');
-
-$plucked->all();
-dd($plucked);
-?>
