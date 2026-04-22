@@ -8,10 +8,11 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')
-            ->where('age', 30)
-            ->orWhere('salary', 500)
-            ->orWhere('id', '>', 4)
+       $users = DB::table('users')
+            ->where('salary', 500)
+            ->orWhere(function($query) {
+                $query->whereBetween('age', [20, 30]);
+            })
             ->get();
         dump($users);
     }
