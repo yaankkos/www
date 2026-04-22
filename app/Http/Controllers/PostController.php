@@ -8,7 +8,10 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->latest('created_at')->get();
+         $users = DB::table('users')
+            ->where('age', '>', 30)
+            ->orderBy('created_at', 'asc')
+            ->get();
         dump($users);
     }
     }
