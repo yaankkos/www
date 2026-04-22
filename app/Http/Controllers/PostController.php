@@ -8,12 +8,26 @@ class PostController extends Controller
 {
     public function show()
     {
-         $id = DB::table('users')->insertGetId([
-            'name' => 'Пользователь с ID',
-            'email' => 'id@mail.com',
-            'age' => 28,
-            'salary' => 1200
+        DB::table('users')->insert([
+            [
+                'name' => 'Массовый 1',
+                'email' => 'mass1@mail.com',
+                'age' => 22,
+                'salary' => 800
+            ],
+            [
+                'name' => 'Массовый 2',
+                'email' => 'mass2@mail.com',
+                'age' => 24,
+                'salary' => 900
+            ],
+            [
+                'name' => 'Массовый 3',
+                'email' => 'mass3@mail.com',
+                'age' => 26,
+                'salary' => 1000
+            ]
         ]);
-        return "ID вставленного пользователя: " . $id;
+        return "Добавлено 3 пользователя";
     }
     }
