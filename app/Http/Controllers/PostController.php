@@ -8,8 +8,8 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->get();
-        return view('users.index', compact('users'));
+        $query = DB::table('posts')->where('id', '!=', 3)->toSql();
+			dump($query);
 
     }
 }
