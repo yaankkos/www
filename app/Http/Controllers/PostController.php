@@ -8,8 +8,9 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')
-            ->skip(4)
+         $users = DB::table('users')
+            ->where('age', 30)
+            ->skip(2)
             ->take(10)
             ->get();
         dump($users);
