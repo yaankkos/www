@@ -9,7 +9,8 @@ class PostController extends Controller
     public function show()
     {
         $users = DB::table('users')
-            ->whereBetween('age', [20, 30])
+            ->where('age', 30)
+            ->orWhere('id', '>', 4)
             ->get();
         dump($users);
 
