@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function show()
     {
-        $user = DB::table('users')->whereEmail('john@mail.com')->get();
+       $user = DB::table('users')->whereIdAndAge(3, 20)->first();
         dump($user);
     }
     }
