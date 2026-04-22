@@ -8,7 +8,16 @@ class PostController extends Controller
 {
     public function show()
     {
-       DB::table('users')->delete();
-        return "Все пользователи удалены";
+       $users = DB::table('users')
+            ->leftJoin('cities', 'users.city_id', '=', 'cities.id')
+            ->select('users.*', 'cities.name as city_name')
+            ->get();
+        
+        foreach ($users as $user) {
+            dump($user->name . ' живет в городе: ' . $user->city_name);
+        }
+        
+        return $users;
+    
     }
 }
