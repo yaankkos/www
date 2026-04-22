@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function show()
     {
-         $names = DB::table('users')->pluck('name');
-dump($names);
+        $users = DB::table('users')->whereBetween('age', [30, 40])->get();
+        dump($users);
     }
 }
