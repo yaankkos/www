@@ -10,13 +10,8 @@ class PostController extends Controller
 {
     public function show()
     {
-        
-       DB::table('posts')->delete();
-
-
-
-
-
+        $users = DB::table('users')->get();
+			dump($users);
 
     }
 }
