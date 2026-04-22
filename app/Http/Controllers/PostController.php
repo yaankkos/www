@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
@@ -11,11 +9,7 @@ class PostController extends Controller
     public function show()
     {
         $users = DB::table('users')->get();
-			
-			foreach ($users as $user) {
-				dump($user);
-
+        return view('users.index', compact('users'));
 
     }
-}
 }
