@@ -8,26 +8,12 @@ class PostController extends Controller
 {
     public function show()
     {
-        DB::table('users')->insert([
-            [
-                'name' => 'Массовый 1',
-                'email' => 'mass1@mail.com',
-                'age' => 22,
-                'salary' => 800
-            ],
-            [
-                'name' => 'Массовый 2',
-                'email' => 'mass2@mail.com',
-                'age' => 24,
-                'salary' => 900
-            ],
-            [
-                'name' => 'Массовый 3',
-                'email' => 'mass3@mail.com',
-                'age' => 26,
-                'salary' => 1000
-            ]
+         DB::table('users')->where('id', 5)->update([
+            'name' => 'Измененное имя',
+            'email' => 'newemail@mail.com',
+            'age' => 35,
+            'salary' => 1500
         ]);
-        return "Добавлено 3 пользователя";
+        return "Пользователь с id=5 обновлен";
     }
-    }
+}
