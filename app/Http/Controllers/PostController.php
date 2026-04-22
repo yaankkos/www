@@ -8,7 +8,16 @@ class PostController extends Controller
 {
     public function show()
     {
-        $randomUser = DB::table('users')->inRandomOrder()->first();
+        $randomUsers = DB::table('users')
+            ->whereBetween('age', [20, 30])
+            ->inRandomOrder()
+            ->get();
+        dump($randomUsers);
+        
+        $randomUser = DB::table('users')
+            ->whereBetween('age', [20, 30])
+            ->inRandomOrder()
+            ->first();
         dump($randomUser);
     }
     }
