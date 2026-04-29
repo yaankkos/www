@@ -4,23 +4,13 @@
     <title>Список пользователей</title>
 </head>
 <body>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($users as $user)
-            <tr>
-                <td>{{ $user->id }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <h1>Статьи</h1>
+
+@foreach($posts as $post)
+    <h2>{{ $post->title }}</h2>
+    <p>{{ $post->descc }}</p>
+    <p>{{ $post->text }}</p>
+    <hr>
+@endforeach
 </body>
 </html>

@@ -2,22 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+use App\Models\Post2;
 
 class PostController extends Controller
 {
     public function show()
     {
-       $users = DB::table('users')
-            ->leftJoin('cities', 'users.city_id', '=', 'cities.id')
-            ->select('users.*', 'cities.name as city_name')
-            ->get();
+        $posts = Post2::all();
+        $post = Post2::find(1);
+        $recent = Post2::orderBy('date', 'desc')->get();
         
-        foreach ($users as $user) {
-            dump($user->name . ' живет в городе: ' . $user->city_name);
-        }
+        $newPost = Post2::create([
+            'title' => 'Новая статья',
+            'descc' => 'Краткое описание',
+            'text' => 'Полный текст...',
+            'date' => now()
+        ]);
         
-        return $users;
-    
+        return response()->json([
+            'posts' => $posts,
+            'post' => $post,
+            'recent' => $recent,
+            'new_post' => $newPost
+        ]);
     }
 }
