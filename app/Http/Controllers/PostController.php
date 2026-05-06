@@ -9,10 +9,12 @@ class PostController extends Controller
     /**
      * @return \Illuminate\View\View
      */
-    public function getOne($id)
+    public function getAll()
     {
-        $post = Post2::find($id); 
-        return view('post.one', ['post' => $post]); 
+       $posts = Post2::all();
+        
+        return view('posts.all', ['posts' => $posts]);
     }
+
 }
 

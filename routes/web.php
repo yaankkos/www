@@ -15,4 +15,5 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/post/{id}', [PostController::class, 'getOne']) ->where('id', '[0-9]+');
+Route::get('/post/{id}', [PostController::class, 'getOne'])
+    ->name('post.getOne');
