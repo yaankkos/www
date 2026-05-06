@@ -7,9 +7,6 @@ use App\Models\Post2;
 class PostController extends Controller
 {
     /**
-     * Получение списка всех статей
-     * Доступен по адресу /post/all/
-     *
      * @return \Illuminate\View\View
      */
     public function getAll()
@@ -19,3 +16,4 @@ class PostController extends Controller
         return view('post.all', ['posts' => $posts]);
     }
 }
+

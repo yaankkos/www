@@ -1,30 +1,28 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Список пользователей</title>
+    <meta charset="UTF-8">
+    <title>Все статьи</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Список пользователей</h1>
-        <table class="table">
-            <thead>
+    <h1>Список статей</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Заголовок</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($posts as $post)
                 <tr>
-                    <th>ID</th>
-                    <th>Имя</th>
-                    <th>Email</th>
+                    <td>{{ $post->id }}</td>
+                    <td>{{ $post->title }}</td>
+                    <td>{{ $post->desc }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach($users as $user)
-                <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 </html>
