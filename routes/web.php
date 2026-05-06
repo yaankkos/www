@@ -15,5 +15,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/post/{id}', [PostController::class, 'getOne'])
-    ->name('post.getOne');
+Route::get('/post/all/{order?}', [PostController::class, 'getAll'])
+    ->where('order', 'id|title|date')
+    ->defaults('order', 'date')
+    ->name('posts.all');

@@ -9,11 +9,27 @@ class PostController extends Controller
     /**
      * @return \Illuminate\View\View
      */
-    public function getAll()
+    public function getAll($order = 'date')
     {
-         $posts = Post2::orderBy('date', 'desc')->get();
+
+        $allowedFields = ['id', 'title', 'date'];
+        
+        if (!in_array($order, $allowedFields)) {
+            $order = 'date';
+        }
+
+        $posts = Post2::orderBy($order, 'desc')->get();
+        
+        return view('posts.all', [
+            'posts' => $posts,
+            'currentOrder' => $order
+        ]);
+    }
     
-    return view('posts.all', ['posts' => $posts]);
+    public function getOne($id)
+    {
+        $post = Post2::find($id);
+        return view('posts.one', ['post' => $post]);
     }
 
 }
