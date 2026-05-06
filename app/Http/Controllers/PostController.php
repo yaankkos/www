@@ -11,9 +11,9 @@ class PostController extends Controller
      */
     public function getAll()
     {
-       $posts = Post2::all();
-        
-        return view('posts.all', ['posts' => $posts]);
+         $posts = Post2::orderBy('date', 'desc')->get();
+    
+    return view('posts.all', ['posts' => $posts]);
     }
 
 }
