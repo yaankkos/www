@@ -3,34 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post2;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    /**
-     * @return \Illuminate\View\View
+     /**
+     * Создание новой статьи.
      */
-    public function getAll($order = 'date')
+    public function newPost(Request $request)
     {
-
-        $allowedFields = ['id', 'title', 'date'];
-        
-        if (!in_array($order, $allowedFields)) {
-            $order = 'date';
+        if ($request->isMethod('get')) {
+            return view('test.newPost');
         }
 
-        $posts = Post2::orderBy($order, 'desc')->get();
-        
-        return view('posts.all', [
-            'posts' => $posts,
-            'currentOrder' => $order
+        $validated = $request->validate([
+            'title' => 'required|max:255',
+            'desc'  => 'required|max:500',
+            'date'  => 'required|date',
+            'text'  => 'required',
         ]);
-    }
-    
-    public function getOne($id)
-    {
-        $post = Post2::find($id);
-        return view('posts.one', ['post' => $post]);
-    }
 
+
+        Post2::create($validated);
+
+
+        return redirect()->route('posts.all')->with('success', 'Статья успешно создана!');
+    }
 }
+
+
 

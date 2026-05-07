@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+// use App\Http\Controllers\PostController;
 
 
 /*
@@ -15,7 +15,5 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/post/all/{order?}', [PostController::class, 'getAll'])
-    ->where('order', 'id|title|date')
-    ->defaults('order', 'date')
-    ->name('posts.all');
+Route::get('/post/new', 'PostController@newPost');
+Route::post('/post/new', 'PostController@newPost');
