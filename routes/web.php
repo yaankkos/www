@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/post/new', 'PostController@newPost');
-Route::post('/post/new', 'PostController@newPost');
+Route::post('/post/new', 'PostController@newPost'); 
