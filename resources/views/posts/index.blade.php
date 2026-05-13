@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,6 +56,12 @@
         @else
             <p>Нет статей. Добавьте статьи через Tinker: php artisan tinker</p>
         @endif
+    </div>
+</body>
+</html>
+
+{{-- Удалите эту строку --}}
+{{-- @endsection --}}
     </div>
 </body>
 </html>
