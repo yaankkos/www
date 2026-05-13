@@ -38,4 +38,6 @@ class PostController extends Controller
         return redirect()->route('posts.deleted')
                          ->with('success', "Статья '{$title}' успешно восстановлена");
     }
+
+
 }
