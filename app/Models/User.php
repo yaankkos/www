@@ -14,7 +14,8 @@ class User extends Model
         'email',
         'password',
         'age',
-        'salary'
+        'salary',
+        'city_id'
     ];
     
     protected $hidden = [
@@ -24,5 +25,10 @@ class User extends Model
     public function profile()
     {
         return $this->hasOne(Profile::class, 'user_id', 'id');
+    }
+    
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id', 'id');
     }
 }
