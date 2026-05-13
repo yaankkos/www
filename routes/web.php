@@ -16,4 +16,4 @@ use App\Http\Controllers\UserProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/user/{id}/profile', [UserProfileController::class, 'getUserWithProfile']);
+Route::get('/users', [UserProfileController::class, 'getAllUsersWithProfiles'])->name('users.index');
