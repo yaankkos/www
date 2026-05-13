@@ -16,4 +16,4 @@ use App\Http\Controllers\UserProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/create-test-user', [UserProfileController::class, 'createUserWithProfile']);
+Route::get('/user/{id}/profile', [UserProfileController::class, 'getUserWithProfile']);
