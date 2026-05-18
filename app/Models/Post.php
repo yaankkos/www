@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $table = 'posts';  
-    public $timestamps = false;
+    protected $fillable = ['title', 'body'];
     
-    protected $fillable = ['title', 'desc', 'text', 'date'];  
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

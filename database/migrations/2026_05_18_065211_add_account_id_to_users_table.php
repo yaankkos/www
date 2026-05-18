@@ -9,14 +9,15 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('email')->comment('Email пользователя')->change();
+            $table->foreignId('account_id')->nullable()->constrained()->nullOnDelete();
         });
     }
 
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('email')->comment('')->change();
+            $table->dropForeign(['account_id']);
+            $table->dropColumn('account_id');
         });
     }
 };

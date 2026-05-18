@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserProfileController;
+use Database\Seeders\RelationsTestSeeder;
+
 
 
 
@@ -16,4 +18,20 @@ use App\Http\Controllers\UserProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/users', [UserProfileController::class, 'getAllUsersWithProfiles'])->name('users.index');
+Route::get('/test-relations', function() {
+    try {
+        // Выполнить сидер через Artisan
+        Artisan::call('db:seed', ['--class' => 'RelationsTestSeeder']);
+        
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Все методы выполнены!',
+            'output' => Artisan::output()
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage()
+        ], 500);
+    }
+});
